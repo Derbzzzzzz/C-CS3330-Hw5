@@ -54,8 +54,9 @@ public abstract class AbstractPizza {
 	
 	/**
 	 * This method calculates and updates the totalPrice of the pizza 
-	 * using priceWithoutToppings attribute and the prices of each topping 
-	 * in the toppingsList. You can use this method on each update you make with the pizza.
+	 * using priceWithoutToppings attribute, the prices of each topping 
+	 * in the toppingsList, and the price of the cooking strategy.
+	 * You can use this method on each update you make with the pizza.
 	 * 
 	 * @return double
 	 */

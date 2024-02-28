@@ -37,6 +37,7 @@ public class SupremePizza extends AbstractPizza{
 			calculatedTotalPrice += t.getToppingPrice();
 		}
 		this.totalPrice = calculatedTotalPrice;
+		this.totalPrice += cookingPrice;
 		return calculatedTotalPrice;
 	}
 }
