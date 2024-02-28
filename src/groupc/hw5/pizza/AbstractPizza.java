@@ -11,7 +11,7 @@ public abstract class AbstractPizza {
 	protected double priceWithoutToppings;
 	protected double totalPrice;
 	protected int pizzaOrderID;
-	protected static int orderIDCounter;
+	protected static int orderIDCounter = 1;
 	protected ICookingStrategy cookingStrategy;
 	protected double cookingPrice;
 	
@@ -41,7 +41,24 @@ public abstract class AbstractPizza {
 	
 	// Abstract Methods
 	
+	/**
+	 * This method calculates the total price of the pizza using 
+	 * priceWithoutToppings and the prices of each topping in the toppingsList. It also assigns
+	 * totalPrice attribute to the calculated total price, and priceWithoutToppings attribute to
+	 * the passed parameter. This could be called once to add the default toppings.
+	 * 
+	 * @param priceWithoutToppings
+	 * @return double
+	 */
 	protected abstract double addTopingsToPrice(double priceWithoutToppings);
+	
+	/**
+	 * This method calculates and updates the totalPrice of the pizza 
+	 * using priceWithoutToppings attribute and the prices of each topping 
+	 * in the toppingsList. You can use this method on each update you make with the pizza.
+	 * 
+	 * @return double
+	 */
 	public abstract double updatePizzaPrice();
 	
 	// Getters and Setters
