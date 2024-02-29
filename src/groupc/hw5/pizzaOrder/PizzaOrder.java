@@ -6,8 +6,12 @@ import java.util.List;
 import groupc.hw5.cookingStrategy.ICookingStrategy;
 import groupc.hw5.pizza.AbstractPizza;
 import groupc.hw5.pizza.CookingStyleType;
+import groupc.hw5.pizza.HawaiianPizza;
+import groupc.hw5.pizza.MargheritaPizza;
 import groupc.hw5.pizza.PizzaType;
+import groupc.hw5.pizza.SupremePizza;
 import groupc.hw5.pizza.Toppings;
+import groupc.hw5.pizza.VegetarianPizza;
 import groupc.hw5.pizzaCookingFactory.PizzaCookingFactory;
 
 public class PizzaOrder {
@@ -25,30 +29,58 @@ public class PizzaOrder {
 	 * This method gets the pizza order with the given pizza order ID 
 	 * and prints the toppings of that order.
 	 * 
+	 * Author: Ryan
+	 * 
 	 * @param orderID
 	 */
 	public void printListOfToppingsByPizzaOrderID(int orderID) {
-		// TODO
+		AbstractPizza target = null;
+		for(AbstractPizza p : pizzaOrderList) {
+			if(p.getPizzaOrderID() == orderID) {
+				target = p;
+				break;
+			}
+		}
+		
+		if(target == null) {
+			return;
+		}
+		
+		for(Toppings t : target.getToppingList()) {
+			System.out.println(t);
+		}
+		
 	}
 	
 	/**
 	 * This method prints the pizzas in the pizzaOrderList.
 	 * 
+	 * Author: Ryan
+	 * 
 	 * @param orderID
 	 */
 	public void printPizzaOrderCart(int orderID) {
-		// TODO
+		for(AbstractPizza p : pizzaOrderList) {
+			System.out.println(p);
+		}
 	}
 	
 	/**
 	 * This method finds the pizza order 
 	 * with the given pizza order id and returns it.
+	 * Note: It returns a copy of the pizza
+	 * 
+	 * Author: Ryan
 	 * 
 	 * @param orderID
 	 * @return AbstractPizza
 	 */
 	 public AbstractPizza getPizzaByOrderID(int orderID) {
-		// TODO
+		 for(AbstractPizza p : pizzaOrderList) {
+				if(p.getPizzaOrderID() == orderID) {
+					return copyPizza(p);
+				}
+		 }
 		 return null;
 	 }
 	 
@@ -56,12 +88,18 @@ public class PizzaOrder {
 	  *  This method creates a new pizza with the given 
 	  *  PizzaType and adds it to the pizzaOrderList
 	  *  
+	  * Author: Ryan
+	  *  
 	  * @param pizzaType
 	  * @return boolean
 	  */
 	 public boolean addPizzaToCart(PizzaType pizzaType) {
-		// TODO
-		 return false;
+		 AbstractPizza p = pizzaFactory.createPizza(pizzaType);
+		 if(p == null) {
+			 return false;
+		 }
+		 pizzaOrderList.add(p);
+		 return true;
 	 }
 	 
 	 /**
@@ -139,6 +177,20 @@ public class PizzaOrder {
 	 public boolean selectCookingStrategyByPizzaOrderID(int orderID, 
 			 CookingStyleType cookingStrategyType) {
 		 return false;
+	 }
+	 
+	 private AbstractPizza copyPizza(AbstractPizza p) {
+		 if(p instanceof MargheritaPizza) {
+			 return new MargheritaPizza((MargheritaPizza)p);
+		 } else if (p instanceof HawaiianPizza) {
+			 return new HawaiianPizza((HawaiianPizza)p);
+		 } else if (p instanceof VegetarianPizza) {
+			 return new VegetarianPizza((VegetarianPizza)p);
+		 } else if(p instanceof SupremePizza) {
+			 return new SupremePizza((SupremePizza)p);
+		 }
+		 
+		 return null;
 	 }
 	 
 }
