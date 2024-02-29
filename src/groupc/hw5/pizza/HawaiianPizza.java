@@ -36,4 +36,13 @@ public class HawaiianPizza extends AbstractPizza {
 		this.totalPrice += cookingPrice;
 		return calculatedTotalPrice;
 	}
+
+	@Override
+	public String toString() {
+		return "HawaiianPizza [toppingList=" + toppingList + ", priceWithoutToppings=" + priceWithoutToppings
+				+ ", totalPrice=" + totalPrice + ", pizzaOrderID=" + pizzaOrderID + ", cookingStrategy="
+				+ cookingStrategy + ", cookingPrice=" + cookingPrice + "]";
+	}
+	
+	
 }
