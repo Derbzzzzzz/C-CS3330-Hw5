@@ -18,11 +18,15 @@ _- Zoe:_
 
 _- Ryan:_   
 
-Example:  
--   Example
--   Example
--   Example
--   Example
+Pizza Order Methods:  
+-   printListOfToppingsByPizzaOrderID
+-   printPizzaOrderCart
+-   getPizzaByOrderID
+-   addPizzaToCart
+
+Additionally:
+-   Did bulk of setting up project (we rotate weeks we do this part)
+-   Created copyPizza method
 
 _- Ando:_
 
