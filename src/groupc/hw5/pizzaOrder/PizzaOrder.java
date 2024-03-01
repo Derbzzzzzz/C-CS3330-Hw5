@@ -103,6 +103,27 @@ public class PizzaOrder {
 	 }
 	 
 	 /**
+	  * Helper function that gets a pizza by id and returns the reference to that specific pizza 
+	  * from the pizzaOrderList.
+	  * It is a helper function so it is private and, additionally, since it returns a reference to a specific
+	  * pizza without making a copy. Otherwise it would be considered a data leak.
+	  * 
+	  * Author: Zoe 
+	  * 
+	  * 
+	  * @param OrderID An id representing the pizza to search for
+	  * @return AbstractPizza or null if there is no pizza that matches
+	  * 
+	  */
+	 private AbstractPizza getPizzaReferenceByID(int OrderID) {
+		 for(AbstractPizza pizza:pizzaOrderList) {
+			 if(pizza.getPizzaOrderID()==OrderID) {
+				 return pizza;
+			 }
+		 }
+		 return null;
+	 }
+	 /**
 	  * This method finds the pizza order with the given ID
 	  * and adds the given topping to its topping list 
 	  * if it doesn’t already exist in the list. If the given

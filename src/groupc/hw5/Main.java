@@ -1,6 +1,7 @@
 package groupc.hw5;
 
 import groupc.hw5.pizza.PizzaType;
+import groupc.hw5.pizza.Toppings;
 import groupc.hw5.pizzaOrder.PizzaOrder;
 
 public class Main {
@@ -56,7 +57,6 @@ public class Main {
 		
 		System.out.println("ID 2:  "); order.printListOfToppingsByPizzaOrderID(2);
 		System.out.println("\nID 0:  "); order.printListOfToppingsByPizzaOrderID(0);
-		
 	}
 
 }
