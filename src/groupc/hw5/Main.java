@@ -57,6 +57,20 @@ public class Main {
 		
 		System.out.println("ID 2:  "); order.printListOfToppingsByPizzaOrderID(2);
 		System.out.println("\nID 0:  "); order.printListOfToppingsByPizzaOrderID(0);
+		
+		///////////////////////////////////////////////////////////////////////////////////////////
+		//update pizza toppings
+		///////////////////////////////////////////////////////////////////////////////////////////
+		
+		System.out.println("\n###############################################################\n");
+		System.out.println("updating Pizza ID 2 toppings to include Bell Peppers");
+		System.out.println("ID 2 (true/false): " + order.addNewToppingToPizza(2, Toppings.BELL_PEPPER));
+		System.out.println(order.getPizzaByOrderID(2));
+		
+		System.out.println("\nupdating nonexistent pizza toppings to include Bell Peppers");
+		System.out.println("nonexistent pizza (true/false): " + order.addNewToppingToPizza(-1, Toppings.BELL_PEPPER));
+		
+		
 	}
 	
 
