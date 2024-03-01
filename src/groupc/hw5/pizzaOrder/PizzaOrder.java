@@ -103,9 +103,9 @@ public class PizzaOrder {
 	 }
 	 
 	 /**
-	  * Helper function that gets a pizza by id and returns the reference to that specific pizza 
+	  * Helper Method that gets a pizza by id and returns the reference to that specific pizza 
 	  * from the pizzaOrderList.
-	  * It is a helper function so it is private and, additionally, since it returns a reference to a specific
+	  * It is a helper Method so it is private and, additionally, since it returns a reference to a specific
 	  * pizza without making a copy. Otherwise it would be considered a data leak.
 	  * 
 	  * Author: Zoe 
@@ -123,6 +123,17 @@ public class PizzaOrder {
 		 }
 		 return null;
 	 }
+	 
+	 /**
+	  * Helper Method that checks a pizza for a specific topping using the contains method.
+	  * @param topping topping to search for
+	  * @param pizza pizza to search for the topping.
+	  * @return true if the pizza contains the topping, false if it does not 
+	  */
+	 private boolean CheckPizzaForTopping(Toppings topping, AbstractPizza pizza) {
+		 List<Toppings> toppingList = pizza.getToppingList();
+		 return toppingList.contains(topping);
+	 }
 	 /**
 	  * This method finds the pizza order with the given ID
 	  * and adds the given topping to its topping list 
@@ -136,6 +147,12 @@ public class PizzaOrder {
 	  * @return boolean
 	  */
 	 public boolean addNewToppingToPizza(int orderID, Toppings topping) {
+		 //gets the pizza by ID
+		 AbstractPizza pizza = getPizzaReferenceByID(orderID);
+		 //checks that the pizza isn't null to add the toppings
+		 if(pizza != null) {
+			 
+		 }
 		 return false;
 	 }
 	 

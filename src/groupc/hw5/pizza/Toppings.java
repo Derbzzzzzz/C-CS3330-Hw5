@@ -20,5 +20,4 @@ public enum Toppings {
 	public double getToppingPrice() {
 		return toppingPrice;
 	}
-	
 }
