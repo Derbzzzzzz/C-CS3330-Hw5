@@ -126,6 +126,8 @@ public class PizzaOrder {
 	 
 	 /**
 	  * Helper Method that checks a pizza for a specific topping using the contains method.
+	  * 
+	  * Author: Zoe
 	  * @param topping topping to search for
 	  * @param pizza pizza to search for the topping.
 	  * @return true if the pizza contains the topping, false if it does not 
@@ -142,6 +144,8 @@ public class PizzaOrder {
 	  * returns true. If the topping already exists in
 	  * the topping list of the pizza, it returns false.
 	  * 
+	  * Author Zoe 
+	  * 
 	  * @param orderID
 	  * @param topping
 	  * @return boolean
@@ -151,6 +155,14 @@ public class PizzaOrder {
 		 AbstractPizza pizza = getPizzaReferenceByID(orderID);
 		 //checks that the pizza isn't null to add the toppings
 		 if(pizza != null) {
+			 //checks to see if the pizza topping doesn't exist
+			 if(!CheckPizzaForTopping(topping, pizza)) {
+				 //adds the topping to the list
+				 pizza.getToppingList().add(topping);
+				 //update price of pizza
+				 pizza.updatePizzaPrice();
+				 return true;
+			 }
 			 
 		 }
 		 return false;
