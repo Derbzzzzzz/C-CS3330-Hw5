@@ -238,26 +238,20 @@ public class PizzaOrder {
 		 		if (cookingStrategyType == CookingStyleType.BRICK_OVEN) {
 		 			//instantiate a brickOvenCookingStrategy
 		 			BrickOvenCookingStrategy strategyTemp =(new BrickOvenCookingStrategy());
-		 			//cook the pizza according to the brickOvencookingStrategy
-		 			strategyTemp.cook(pizza);
-		 			//cooking was a success
-		 			return true;
+		 			//cook the pizza according to the brickOvencookingStrategy - return boolean
+		 			return strategyTemp.cook(pizza);
 		 		}
 		 		if(cookingStrategyType== CookingStyleType.CONVENTIONAL_OVEN) {
 		 			//instantiate a ConventionalOvenCookingStrategy
 		 			ConventionalOvenCookingStrategy strategyTemp =(new ConventionalOvenCookingStrategy());
-		 			//cook the pizza according to the convential_oven cooking strategy
-		 			strategyTemp.cook(pizza);
-		 			//cooking was a success
-		 			return true;
+		 			//cook the pizza according to the convential_oven cooking strategy - return boolean
+		 			return strategyTemp.cook(pizza);
 		 		}
 		 		if(cookingStrategyType == CookingStyleType.MICROWAVE) {
 		 			//instantiate a Microwave cooking strategy 
 		 			MicrowaveCookingStrategy strategyTemp = new MicrowaveCookingStrategy();
-		 			//cook the pizza according to the convential oven cooking strategy
-		 			strategyTemp.cook(pizza);
-		 			//cooking was a success
-		 			return true;
+		 			//cook the pizza according to the conventional oven cooking strategy - return boolean
+		 			return strategyTemp.cook(pizza);
 		 			
 		 		}
 		 	}
