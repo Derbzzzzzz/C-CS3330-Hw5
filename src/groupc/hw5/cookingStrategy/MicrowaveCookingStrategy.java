@@ -11,5 +11,10 @@ public class MicrowaveCookingStrategy implements ICookingStrategy {
 		pizza.updatePizzaPrice();
 		return true;
 	}
+	
+	@Override
+	public String toString() {
+		return "Microwave";
+	}
 
 }

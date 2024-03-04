@@ -11,5 +11,11 @@ public class BrickOvenCookingStrategy implements ICookingStrategy {
 		pizza.updatePizzaPrice();
 		return true;
 	}
+	
+	@Override
+	public String toString() {
+		
+		return "Brick_oven";
+	}
 
 }
