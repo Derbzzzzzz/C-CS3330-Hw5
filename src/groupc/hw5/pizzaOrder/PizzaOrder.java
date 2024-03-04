@@ -223,34 +223,45 @@ public class PizzaOrder {
 	  * cookingStrategyType parameter. Calls the cook function 
 	  * for the pizza of the pizza order with the given order ID.
 	  * 
-	  * 
-	  * @param orderID 
-	  * @param cookingStrategyType
-	  * @return boolean
+	  * Author: Zoe 
+	  * @param orderID The pizza ID of the pizza to select the cooking Strategy 
+	  * @param cookingStrategyType How the pizza is supposed to be cooked
+	  * @return boolean returns true on success, returns false on failure
 	  */
 	 public boolean selectCookingStrategyByPizzaOrderID(int orderID, 
 			 CookingStyleType cookingStrategyType) {
-		 	
+		 	//gets the pizza by id
 		 	AbstractPizza pizza = getPizzaReferenceByID(orderID);
-		 	if(pizza != null) {
+		 	if(pizza != null) { //checks to see if the pizza exists
+		 		
+		 		//The following "if's" test to see what type of cooking style will be utilized
 		 		if (cookingStrategyType == CookingStyleType.BRICK_OVEN) {
+		 			//instantiate a brickOvenCookingStrategy
 		 			BrickOvenCookingStrategy strategyTemp =(new BrickOvenCookingStrategy());
+		 			//cook the pizza according to the brickOvencookingStrategy
 		 			strategyTemp.cook(pizza);
+		 			//cooking was a success
 		 			return true;
 		 		}
 		 		if(cookingStrategyType== CookingStyleType.CONVENTIONAL_OVEN) {
+		 			//instantiate a ConventionalOvenCookingStrategy
 		 			ConventionalOvenCookingStrategy strategyTemp =(new ConventionalOvenCookingStrategy());
+		 			//cook the pizza according to the convential_oven cooking strategy
 		 			strategyTemp.cook(pizza);
+		 			//cooking was a success
 		 			return true;
 		 		}
 		 		if(cookingStrategyType == CookingStyleType.MICROWAVE) {
-		 			//pizza.setCookingStrategy(new MicrowaveCookingStrategy());
+		 			//instantiate a Microwave cooking strategy 
 		 			MicrowaveCookingStrategy strategyTemp = new MicrowaveCookingStrategy();
+		 			//cook the pizza according to the convential oven cooking strategy
 		 			strategyTemp.cook(pizza);
+		 			//cooking was a success
 		 			return true;
 		 			
 		 		}
 		 	}
+		 //changing the strategy was a failure
 		 return false;
 	 }
 	 
