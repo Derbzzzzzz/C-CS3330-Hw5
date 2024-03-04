@@ -71,6 +71,22 @@ public class Main {
 		System.out.println("\nupdating nonexistent pizza toppings to include Bell Peppers");
 		System.out.println("nonexistent pizza (true/false): " + order.addNewToppingToPizza(-1, Toppings.BELL_PEPPER));
 
+		///////////////////////////////////////////////////////////////////////////////////////////
+		//update cooking strategy
+		///////////////////////////////////////////////////////////////////////////////////////////
+		System.out.println("\n###############################################################\n");
+		System.out.println("updating the cooking strategy of order 2 to brickOvenCookingStrategy: " + order.selectCookingStrategyByPizzaOrderID(2, CookingStyleType.BRICK_OVEN));
+		System.out.println(order.getPizzaByOrderID(2));
+		System.out.println("\nupdating the cooking strategy of order 2 to MicrowaveCookingStrategy: " + order.selectCookingStrategyByPizzaOrderID(2, CookingStyleType.MICROWAVE));
+		System.out.println(order.getPizzaByOrderID(2));
+		System.out.println("\nupdating the cooking strategy of order 2 to ConventionalOvenCookingStrategy: " + order.selectCookingStrategyByPizzaOrderID(2, CookingStyleType.CONVENTIONAL_OVEN));
+		System.out.println(order.getPizzaByOrderID(2));
+		
+		System.out.println("\nupdating the cooking strategy of non-existent pizza: " + order.selectCookingStrategyByPizzaOrderID(-1, CookingStyleType.CONVENTIONAL_OVEN));
+
+		System.out.println("\n###############################################################\n");
+		
+		
 		
 	}
 	
