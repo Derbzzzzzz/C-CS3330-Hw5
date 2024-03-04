@@ -75,7 +75,9 @@ public class Main {
 		//update cooking strategy
 		///////////////////////////////////////////////////////////////////////////////////////////
 		System.out.println("\n###############################################################\n");
-		System.out.println("updating the cooking strategy of order 2 to brickOvenCookingStrategy: " + order.selectCookingStrategyByPizzaOrderID(2, CookingStyleType.BRICK_OVEN));
+		System.out.println("\nupdating the cooking strategy of order 2 to brickOvenCookingStrategy: " + order.selectCookingStrategyByPizzaOrderID(2, CookingStyleType.BRICK_OVEN));
+		System.out.println(order.getPizzaByOrderID(2));
+		System.out.println("\nupdating the cooking strategy of order 2 to the same thing again (should fail): " + order.selectCookingStrategyByPizzaOrderID(2, CookingStyleType.BRICK_OVEN));
 		System.out.println(order.getPizzaByOrderID(2));
 		System.out.println("\nupdating the cooking strategy of order 2 to MicrowaveCookingStrategy: " + order.selectCookingStrategyByPizzaOrderID(2, CookingStyleType.MICROWAVE));
 		System.out.println(order.getPizzaByOrderID(2));

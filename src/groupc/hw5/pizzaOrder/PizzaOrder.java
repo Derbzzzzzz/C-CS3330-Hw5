@@ -223,10 +223,11 @@ public class PizzaOrder {
 	  * cookingStrategyType parameter. Calls the cook function 
 	  * for the pizza of the pizza order with the given order ID.
 	  * 
+	  * 
 	  * Author: Zoe 
 	  * @param orderID The pizza ID of the pizza to select the cooking Strategy 
 	  * @param cookingStrategyType How the pizza is supposed to be cooked
-	  * @return boolean returns true on success, returns false on failure
+	  * @return boolean returns true on success, returns false on failure. Failure occurs if the pizza doesn't exist or the strategy is already set to the strategy that it is getting changed to
 	  */
 	 public boolean selectCookingStrategyByPizzaOrderID(int orderID, 
 			 CookingStyleType cookingStrategyType) {
@@ -236,20 +237,33 @@ public class PizzaOrder {
 		 		
 		 		//The following "if's" test to see what type of cooking style will be utilized
 		 		if (cookingStrategyType == CookingStyleType.BRICK_OVEN) {
+		 			
 		 			//instantiate a brickOvenCookingStrategy
 		 			BrickOvenCookingStrategy strategyTemp =(new BrickOvenCookingStrategy());
+		 			//tests to see if cooking strategy was already set to the same strategy that it is being changed to
+		 			if(pizza.getCookingStrategy() !=null && pizza.getCookingStrategy().getClass() == strategyTemp.getClass()) {
+		 				return false;
+		 			}
 		 			//cook the pizza according to the brickOvencookingStrategy - return boolean
 		 			return strategyTemp.cook(pizza);
 		 		}
 		 		if(cookingStrategyType== CookingStyleType.CONVENTIONAL_OVEN) {
 		 			//instantiate a ConventionalOvenCookingStrategy
 		 			ConventionalOvenCookingStrategy strategyTemp =(new ConventionalOvenCookingStrategy());
+		 			//tests to see if cooking strategy was already set to the same strategy that it is being changed to
+		 			if(pizza.getCookingStrategy() !=null && pizza.getCookingStrategy().getClass() == strategyTemp.getClass()) {
+		 				return false;
+		 			}
 		 			//cook the pizza according to the convential_oven cooking strategy - return boolean
 		 			return strategyTemp.cook(pizza);
 		 		}
 		 		if(cookingStrategyType == CookingStyleType.MICROWAVE) {
 		 			//instantiate a Microwave cooking strategy 
 		 			MicrowaveCookingStrategy strategyTemp = new MicrowaveCookingStrategy();
+		 			//tests to see if cooking strategy was already set to the same strategy that it is being changed to
+		 			if(pizza.getCookingStrategy() !=null && pizza.getCookingStrategy().getClass() == strategyTemp.getClass()) {
+		 				return false;
+		 			}
 		 			//cook the pizza according to the conventional oven cooking strategy - return boolean
 		 			return strategyTemp.cook(pizza);
 		 			
