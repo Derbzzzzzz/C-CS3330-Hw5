@@ -3,7 +3,10 @@ package groupc.hw5.pizzaOrder;
 import java.util.ArrayList;
 import java.util.List;
 
+import groupc.hw5.cookingStrategy.BrickOvenCookingStrategy;
+import groupc.hw5.cookingStrategy.ConventionalOvenCookingStrategy;
 import groupc.hw5.cookingStrategy.ICookingStrategy;
+import groupc.hw5.cookingStrategy.MicrowaveCookingStrategy;
 import groupc.hw5.pizza.AbstractPizza;
 import groupc.hw5.pizza.CookingStyleType;
 import groupc.hw5.pizza.HawaiianPizza;
@@ -220,12 +223,34 @@ public class PizzaOrder {
 	  * cookingStrategyType parameter. Calls the cook function 
 	  * for the pizza of the pizza order with the given order ID.
 	  * 
-	  * @param orderID
+	  * 
+	  * @param orderID 
 	  * @param cookingStrategyType
 	  * @return boolean
 	  */
 	 public boolean selectCookingStrategyByPizzaOrderID(int orderID, 
 			 CookingStyleType cookingStrategyType) {
+		 	
+		 	AbstractPizza pizza = getPizzaReferenceByID(orderID);
+		 	if(pizza != null) {
+		 		if (cookingStrategyType == CookingStyleType.BRICK_OVEN) {
+		 			BrickOvenCookingStrategy strategyTemp =(new BrickOvenCookingStrategy());
+		 			strategyTemp.cook(pizza);
+		 			return true;
+		 		}
+		 		if(cookingStrategyType== CookingStyleType.CONVENTIONAL_OVEN) {
+		 			ConventionalOvenCookingStrategy strategyTemp =(new ConventionalOvenCookingStrategy());
+		 			strategyTemp.cook(pizza);
+		 			return true;
+		 		}
+		 		if(cookingStrategyType == CookingStyleType.MICROWAVE) {
+		 			//pizza.setCookingStrategy(new MicrowaveCookingStrategy());
+		 			MicrowaveCookingStrategy strategyTemp = new MicrowaveCookingStrategy();
+		 			strategyTemp.cook(pizza);
+		 			return true;
+		 			
+		 		}
+		 	}
 		 return false;
 	 }
 	 

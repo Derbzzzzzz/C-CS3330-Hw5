@@ -1,5 +1,6 @@
 package groupc.hw5;
 
+import groupc.hw5.pizza.CookingStyleType;
 import groupc.hw5.pizza.PizzaType;
 import groupc.hw5.pizza.Toppings;
 import groupc.hw5.pizzaOrder.PizzaOrder;
@@ -69,7 +70,7 @@ public class Main {
 		
 		System.out.println("\nupdating nonexistent pizza toppings to include Bell Peppers");
 		System.out.println("nonexistent pizza (true/false): " + order.addNewToppingToPizza(-1, Toppings.BELL_PEPPER));
-		
+
 		
 	}
 	
