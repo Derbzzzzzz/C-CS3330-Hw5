@@ -36,7 +36,15 @@ public class PizzaCookingFactory {
 		return null;
 	}
 	
+	/**
+	 * Copy constructor for the different pizza types. An abstractPizza is passed into the function and a copy is returned
+	 * 
+	 * @param p Pizza to make a copy of
+	 * @return AbstractPizza a copy of the pizza p.
+	 */
 	public AbstractPizza copyPizza(AbstractPizza p) {
+		//The if's check what type of pizza the passed in pizza "p" is 
+		//A proper copy is then made of that pizza type and returned to the user
 		 if(p instanceof MargheritaPizza) {
 			 return new MargheritaPizza((MargheritaPizza)p);
 		 } else if (p instanceof HawaiianPizza) {
@@ -47,6 +55,7 @@ public class PizzaCookingFactory {
 			 return new SupremePizza((SupremePizza)p);
 		 }
 		 
+		 //pizza passed in wasn't a known type of pizza
 		 return null;
 	 }
 
