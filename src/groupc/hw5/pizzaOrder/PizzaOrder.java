@@ -81,7 +81,8 @@ public class PizzaOrder {
 	 public AbstractPizza getPizzaByOrderID(int orderID) {
 		 for(AbstractPizza p : pizzaOrderList) {
 				if(p.getPizzaOrderID() == orderID) {
-					return copyPizza(p);
+					//gets a copy of pizza
+					return pizzaFactory.copyPizza(p);
 				}
 		 }
 		 return null;
@@ -273,18 +274,5 @@ public class PizzaOrder {
 		 return false;
 	 }
 	 
-	 private AbstractPizza copyPizza(AbstractPizza p) {
-		 if(p instanceof MargheritaPizza) {
-			 return new MargheritaPizza((MargheritaPizza)p);
-		 } else if (p instanceof HawaiianPizza) {
-			 return new HawaiianPizza((HawaiianPizza)p);
-		 } else if (p instanceof VegetarianPizza) {
-			 return new VegetarianPizza((VegetarianPizza)p);
-		 } else if(p instanceof SupremePizza) {
-			 return new SupremePizza((SupremePizza)p);
-		 }
-		 
-		 return null;
-	 }
 	 
 }

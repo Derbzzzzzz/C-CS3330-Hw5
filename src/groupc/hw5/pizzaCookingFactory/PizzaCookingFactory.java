@@ -35,5 +35,19 @@ public class PizzaCookingFactory {
 		
 		return null;
 	}
+	
+	public AbstractPizza copyPizza(AbstractPizza p) {
+		 if(p instanceof MargheritaPizza) {
+			 return new MargheritaPizza((MargheritaPizza)p);
+		 } else if (p instanceof HawaiianPizza) {
+			 return new HawaiianPizza((HawaiianPizza)p);
+		 } else if (p instanceof VegetarianPizza) {
+			 return new VegetarianPizza((VegetarianPizza)p);
+		 } else if(p instanceof SupremePizza) {
+			 return new SupremePizza((SupremePizza)p);
+		 }
+		 
+		 return null;
+	 }
 
 }
