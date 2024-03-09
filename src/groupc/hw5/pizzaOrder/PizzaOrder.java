@@ -216,6 +216,13 @@ public class PizzaOrder {
 	  * @return boolean
 	  */
 	 public boolean isThereAnyUncookedPizza() {
+		 for (AbstractPizza pizza : pizzaOrderList) {
+			 // if any pizza does not have a cooking strategy, return false
+			 ICookingStrategy cookIngStrat = pizza.getCookingStrategy();
+			 if (cookIngStrat == null) {
+				 return true;
+			 }
+		 }
 		 return false;
 	 }
 	 
