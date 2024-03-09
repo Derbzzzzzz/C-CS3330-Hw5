@@ -52,6 +52,10 @@ _- Ando:_
 
 _- John:_
 
+Pizza Order Methods:  
+-   removeToppingFromPizza
+-   isThereAnyUncookedPizza
+
 _**Running The Code:**_
 --------------------------
 There are no additional requirements to run the code. To run the code clone the repository:
