@@ -100,8 +100,22 @@ public class Main {
 
 		System.out.println("\n###############################################################\n");
 		
+		///////////////////////////////////////////////////////////////////////////////////////////
+		//check for pizzas that do not have a cooking strategy
+		///////////////////////////////////////////////////////////////////////////////////////////
+		System.out.println("\n###############################################################\n");
+		System.out.println("pizza 1 cooking strategy = " + order.getPizzaByOrderID(1).getCookingStrategy());
+		System.out.println("pizza 2 cooking strategy = " + order.getPizzaByOrderID(2).getCookingStrategy());
+		System.out.println("pizza 3 cooking strategy = " + order.getPizzaByOrderID(3).getCookingStrategy());
+		System.out.println("pizza 4 cooking strategy = " + order.getPizzaByOrderID(4).getCookingStrategy());
+		System.out.println("\nis if there are any uncooked pizza: (expected: true) : " + order.isThereAnyUncookedPizza());
 		
-		
+		order.selectCookingStrategyByPizzaOrderID(1, CookingStyleType.BRICK_OVEN);
+		order.selectCookingStrategyByPizzaOrderID(2, CookingStyleType.MICROWAVE);
+		order.selectCookingStrategyByPizzaOrderID(3, CookingStyleType.CONVENTIONAL_OVEN);
+		order.selectCookingStrategyByPizzaOrderID(4, CookingStyleType.BRICK_OVEN);
+		System.out.println("\nis if there are any uncooked pizza: (expected: false) : " + order.isThereAnyUncookedPizza());
+		System.out.println("\n###############################################################\n");
 	}
 	
 
