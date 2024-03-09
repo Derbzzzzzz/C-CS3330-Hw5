@@ -175,17 +175,33 @@ public class PizzaOrder {
 	 /**
 	  * This method finds the pizza order with the given ID
 	  * and removes the given topping from its topping list 
-	  * if it exists in the list. If the given topping is removed, 
+	  * if it exists in the list,
+	  * If the given topping is removed, 
 	  * it also updates the pizza price and returns true. If the 
-	  * topping doesn’t exist in the topping list of the pizza and 
+	  * topping doesn’t exist in the topping list of the pizza, and 
 	  * cannot be removed, it returns false.
 	  * 
-	  * @param orderID
-	  * @param topping
+	  * Author: John
+	  * 
+	  * @param orderID id of the ordered pizza
+	  * @param topping ENUM of the topping to be remove
 	  * @return boolean
 	  */
 	 public boolean removeToppingFromPizza(int orderID, Toppings topping) {
-		 return false;
+		 AbstractPizza pizza = getPizzaReferenceByID(orderID);
+		 // check if the pizza exists
+		 if (pizza == null) {
+			 return false;
+		 }
+		 // check if the topping is on the pizza
+		 if (!CheckPizzaForTopping(topping, pizza)) {
+			 return false;
+		 }
+		 // if there IS a topping on the pizza, run:
+		 pizza.getToppingList().remove(topping);
+		 // update pizza price
+		 pizza.updatePizzaPrice();
+		 return true;
 	 }
 	 
 	 /**
@@ -194,6 +210,8 @@ public class PizzaOrder {
 	  * are any pizzas without any assigned pizza cooking strategy. 
 	  * It returns false if there are no pizzas without an 
 	  * assigned cooking strategy.
+	  * 
+	  * Author: John
 	  * 
 	  * @return boolean
 	  */
