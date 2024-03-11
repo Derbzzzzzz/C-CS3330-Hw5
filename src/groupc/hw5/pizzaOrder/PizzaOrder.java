@@ -236,11 +236,20 @@ public class PizzaOrder {
 	  * The checkout method calls the isThereAnyUncookedPizza method 
 	  * to check for uncooked pizzas and throws an exception.
 	  * 
+	  * Author: Ando
+	  *
 	  * @return double
 	  * @throws Exception
 	  */
 	 public double checkout() throws Exception {
-		 return 0.0;
+		if(isThereAnyUncookedPizza() == false){
+			 double total=0;
+			 for(AbstractPizza p : pizzaOrderList) {
+				 total+=p.getTotalPrice();
+			 }
+			 return total;
+		}
+		throw new Exception("There are still uncooked pizzas");
 	 }
 	 
 	 /**
