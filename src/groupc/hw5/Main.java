@@ -110,12 +110,26 @@ public class Main {
 		System.out.println("pizza 4 cooking strategy = " + order.getPizzaByOrderID(4).getCookingStrategy());
 		System.out.println("\nis if there are any uncooked pizza: (expected: true) : " + order.isThereAnyUncookedPizza());
 		
+		try {
+			System.out.print("Should throw exception: ");			
+			System.out.println("Total order price:" + order.checkout());			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+
 		order.selectCookingStrategyByPizzaOrderID(1, CookingStyleType.BRICK_OVEN);
 		order.selectCookingStrategyByPizzaOrderID(2, CookingStyleType.MICROWAVE);
 		order.selectCookingStrategyByPizzaOrderID(3, CookingStyleType.CONVENTIONAL_OVEN);
 		order.selectCookingStrategyByPizzaOrderID(4, CookingStyleType.BRICK_OVEN);
 		System.out.println("\nis if there are any uncooked pizza: (expected: false) : " + order.isThereAnyUncookedPizza());
 		System.out.println("\n###############################################################\n");
+
+		try {
+			System.out.println("Should print order price");			
+			System.out.println("Total order price:" + order.checkout());			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 	
 
