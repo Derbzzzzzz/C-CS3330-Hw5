@@ -12,7 +12,7 @@ public class Main {
 		// Instantiate a pizzaOrder, perform operations based on the requirements.
 		PizzaOrder order = new PizzaOrder();
 		// Adds pizzas to the cart, selects cooking strategies for the pizzas in the cart,
-		// prints pizza order cart. Calls checkout to calculate the bill, throws exception if
+		// prints pizza order cart. Calls checkout to calculate the bill, throws an exception if
 		// triggered.
 		
 		///////////////////////////////////////////////////////////////////////////////////////////
@@ -108,11 +108,11 @@ public class Main {
 		System.out.println("pizza 2 cooking strategy = " + order.getPizzaByOrderID(2).getCookingStrategy());
 		System.out.println("pizza 3 cooking strategy = " + order.getPizzaByOrderID(3).getCookingStrategy());
 		System.out.println("pizza 4 cooking strategy = " + order.getPizzaByOrderID(4).getCookingStrategy());
-		System.out.println("\nis if there are any uncooked pizza: (expected: true) : " + order.isThereAnyUncookedPizza());
+		System.out.println("\nAre there any uncooked pizza: (expected: true) : " + order.isThereAnyUncookedPizza());
 		
 		try {
 			System.out.print("Should throw exception: ");			
-			System.out.println("Total order price:" + order.checkout());			
+			System. out.println("Total order price:" + order.checkout());			
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -121,7 +121,7 @@ public class Main {
 		order.selectCookingStrategyByPizzaOrderID(2, CookingStyleType.MICROWAVE);
 		order.selectCookingStrategyByPizzaOrderID(3, CookingStyleType.CONVENTIONAL_OVEN);
 		order.selectCookingStrategyByPizzaOrderID(4, CookingStyleType.BRICK_OVEN);
-		System.out.println("\nis if there are any uncooked pizza: (expected: false) : " + order.isThereAnyUncookedPizza());
+		System.out.println("\nAre there any uncooked pizza: (expected: false) : " + order.isThereAnyUncookedPizza());
 		System.out.println("\n###############################################################\n");
 
 		try {

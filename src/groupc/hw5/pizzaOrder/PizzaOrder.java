@@ -70,7 +70,7 @@ public class PizzaOrder {
 	
 	/**
 	 * This method finds the pizza order 
-	 * with the given pizza order id and returns it.
+	 * with the given pizza order ID and returns it.
 	 * Note: It returns a copy of the pizza
 	 * 
 	 * Author: Ryan
@@ -81,7 +81,7 @@ public class PizzaOrder {
 	 public AbstractPizza getPizzaByOrderID(int orderID) {
 		 for(AbstractPizza p : pizzaOrderList) {
 				if(p.getPizzaOrderID() == orderID) {
-					//gets a copy of pizza
+					//gets a copy of the pizza
 					return pizzaFactory.copyPizza(p);
 				}
 		 }
@@ -107,15 +107,15 @@ public class PizzaOrder {
 	 }
 	 
 	 /**
-	  * Helper Method that gets a pizza by id and returns the reference to that specific pizza 
+	  * Helper Method that gets a pizza by ID and returns the reference to that specific pizza 
 	  * from the pizzaOrderList.
 	  * It is a helper Method so it is private and, additionally, since it returns a reference to a specific
-	  * pizza without making a copy. Otherwise it would be considered a data leak.
+	  * pizza without making a copy. Otherwise, it would be considered a data leak.
 	  * 
 	  * Author: Zoe 
 	  * 
 	  * 
-	  * @param OrderID An id representing the pizza to search for
+	  * @param OrderID An ID representing the pizza to search for
 	  * @return AbstractPizza or null if there is no pizza that matches
 	  * 
 	  */
@@ -146,7 +146,7 @@ public class PizzaOrder {
 	  * if it doesn’t already exist in the list. If the given
 	  * topping is added, it also updates the pizza price and 
 	  * returns true. If the topping already exists in
-	  * the topping list of the pizza, it returns false.
+	  * the topping list of the pizza, returns false.
 	  * 
 	  * Author Zoe 
 	  * 
@@ -163,7 +163,7 @@ public class PizzaOrder {
 			 if(!CheckPizzaForTopping(topping, pizza)) {
 				 //adds the topping to the list
 				 pizza.getToppingList().add(topping);
-				 //update price of pizza
+				 //update the price of pizza
 				 pizza.updatePizzaPrice();
 				 return true;
 			 }
@@ -184,7 +184,7 @@ public class PizzaOrder {
 	  * Author: John
 	  * 
 	  * @param orderID id of the ordered pizza
-	  * @param topping ENUM of the topping to be remove
+	  * @param topping ENUM of the topping to be removed
 	  * @return boolean
 	  */
 	 public boolean removeToppingFromPizza(int orderID, Toppings topping) {
@@ -275,27 +275,27 @@ public class PizzaOrder {
 		 			
 		 			//instantiate a brickOvenCookingStrategy
 		 			BrickOvenCookingStrategy strategyTemp =(new BrickOvenCookingStrategy());
-		 			//tests to see if cooking strategy was already set to the same strategy that it is being changed to
+		 			//tests to see if the cooking strategy was already set to the same strategy that it is being changed to
 		 			if(pizza.getCookingStrategy() !=null && pizza.getCookingStrategy().getClass() == strategyTemp.getClass()) {
 		 				return false;
 		 			}
-		 			//cook the pizza according to the brickOvencookingStrategy - return boolean
+		 			//cook the pizza according to the brickOvenCookingStrategy - return boolean
 		 			return strategyTemp.cook(pizza);
 		 		}
 		 		if(cookingStrategyType== CookingStyleType.CONVENTIONAL_OVEN) {
 		 			//instantiate a ConventionalOvenCookingStrategy
 		 			ConventionalOvenCookingStrategy strategyTemp =(new ConventionalOvenCookingStrategy());
-		 			//tests to see if cooking strategy was already set to the same strategy that it is being changed to
+		 			//tests to see if the cooking strategy was already set to the same strategy that it is being changed to
 		 			if(pizza.getCookingStrategy() !=null && pizza.getCookingStrategy().getClass() == strategyTemp.getClass()) {
 		 				return false;
 		 			}
-		 			//cook the pizza according to the convential_oven cooking strategy - return boolean
+		 			//cook the pizza according to the conventional_oven cooking strategy - return a boolean
 		 			return strategyTemp.cook(pizza);
 		 		}
 		 		if(cookingStrategyType == CookingStyleType.MICROWAVE) {
 		 			//instantiate a Microwave cooking strategy 
 		 			MicrowaveCookingStrategy strategyTemp = new MicrowaveCookingStrategy();
-		 			//tests to see if cooking strategy was already set to the same strategy that it is being changed to
+		 			//tests to see if the cooking strategy was already set to the same strategy that it is being changed to
 		 			if(pizza.getCookingStrategy() !=null && pizza.getCookingStrategy().getClass() == strategyTemp.getClass()) {
 		 				return false;
 		 			}
