@@ -4,7 +4,7 @@ public class HawaiianPizza extends AbstractPizza {
 
 	// Default Constructor
 	public HawaiianPizza() {
-		super(3.00, 3.00, AbstractPizza.orderIDCounter++, null, 0);
+		super(3.00, 3.00, AbstractPizza.orderIDCounter, null, 0);
 		getToppingList().add(Toppings.CANADIAN_BACON);
 		getToppingList().add(Toppings.CHEESE);
 		getToppingList().add(Toppings.PINEAPPLE);

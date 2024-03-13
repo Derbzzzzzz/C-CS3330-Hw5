@@ -21,19 +21,21 @@ public class PizzaCookingFactory {
 	 * @return AbstractPizza
 	 */
 	public AbstractPizza createPizza(PizzaType pizzaType) {
-		AbstractPizza pizza;
-		
+		AbstractPizza pizza = null;
 		if(pizzaType.equals(PizzaType.HAWAIIAN)) {
-			return new HawaiianPizza();
+			pizza =  new HawaiianPizza();
 		} else if(pizzaType.equals(PizzaType.MARGHERITA)) {
-			return new MargheritaPizza();
+			pizza = new MargheritaPizza();
 		} else if(pizzaType.equals(PizzaType.VEGETARIAN)) {
-			return new VegetarianPizza();
+			pizza = new VegetarianPizza();
 		} else if(pizzaType.equals(PizzaType.SUPREME)) {
-			return new SupremePizza();
+			pizza = new SupremePizza();
+		}
+		if(pizza != null) {
+			AbstractPizza.setOrderIDCounter(AbstractPizza.getOrderIDCounter()+1);
 		}
 		
-		return null;
+		return pizza;
 	}
 	
 	/**

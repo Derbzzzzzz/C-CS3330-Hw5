@@ -4,7 +4,7 @@ public class VegetarianPizza extends AbstractPizza {
 
 	// Default Constructor
 	public VegetarianPizza() {
-		super(1.50, 1.50, AbstractPizza.orderIDCounter++, null, 0);
+		super(1.50, 1.50, AbstractPizza.orderIDCounter, null, 0);
 		getToppingList().add(Toppings.TOMATO);
 		getToppingList().add(Toppings.CHEESE);
 		addTopingsToPrice(priceWithoutToppings);

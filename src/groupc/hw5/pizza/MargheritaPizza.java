@@ -5,7 +5,7 @@ public class MargheritaPizza extends AbstractPizza{
 	
 	// Default Constructor
 	public MargheritaPizza() {
-		super(2.50, 2.50, AbstractPizza.orderIDCounter++, null, 0);
+		super(2.50, 2.50, AbstractPizza.orderIDCounter, null, 0);
 		getToppingList().add(Toppings.TOMATO);
 		getToppingList().add(Toppings.CHEESE);
 		addTopingsToPrice(priceWithoutToppings);

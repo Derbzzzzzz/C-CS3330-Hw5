@@ -4,7 +4,7 @@ public class SupremePizza extends AbstractPizza{
 	
 	// Default Constructor
 	public SupremePizza() {
-		super(3.50, 3.50, AbstractPizza.orderIDCounter++, null, 0);
+		super(3.50, 3.50, AbstractPizza.orderIDCounter, null, 0);
 		getToppingList().add(Toppings.TOMATO);
 		getToppingList().add(Toppings.CHEESE);
 		getToppingList().add(Toppings.BELL_PEPPER);
