@@ -111,7 +111,7 @@ public class Main {
 		System.out.println("\nAre there any uncooked pizza: (expected: true) : " + order.isThereAnyUncookedPizza());
 		
 		try {
-			System.out.print("Should throw exception: ");			
+			System.out.println("Should throw exception for checkout method: ");			
 			System. out.println("Total order price:" + order.checkout());			
 		} catch (Exception e) {
 			System.out.println(e);
@@ -125,7 +125,7 @@ public class Main {
 		System.out.println("\n###############################################################\n");
 
 		try {
-			System.out.println("Should print order price");			
+			System.out.println("Should print order price for checkout");			
 			System.out.println("Total order price:" + order.checkout());			
 		} catch (Exception e) {
 			System.out.println(e);

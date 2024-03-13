@@ -56,6 +56,7 @@ Pizza Order Methods:
 
 Additionally:
 -   Fixed typos and grammar issues
+-   Fixed the orderIDcounter to be incremented in the factory
 
 _- John:_
 
