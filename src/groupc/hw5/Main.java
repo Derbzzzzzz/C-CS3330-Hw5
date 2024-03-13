@@ -35,7 +35,11 @@ public class Main {
 		
 		System.out.println("Printing Pizza Order Cart...\n");
 				
-		order.printPizzaOrderCart(0);
+		order.printPizzaOrderCart(1);
+		order.printPizzaOrderCart(2);
+		order.printPizzaOrderCart(3);
+		order.printPizzaOrderCart(4);
+
 		
 		///////////////////////////////////////////////////////////////////////////////////////////
 		// Getting Pizza by Order ID
