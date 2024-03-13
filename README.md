@@ -50,6 +50,13 @@ Additionally:
 
 _- Ando:_
 
+Pizza Order Methods:  
+-   checkout
+-   printPizzaOrderCart
+
+Additionally:
+-   Fixed typos and grammar issues
+
 _- John:_
 
 Pizza Order Methods:  

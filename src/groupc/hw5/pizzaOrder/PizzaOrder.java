@@ -59,13 +59,25 @@ public class PizzaOrder {
 	 * This method prints the pizzas in the pizzaOrderList.
 	 * 
 	 * Author: Ryan
-	 * 
-	 * @param orderID
 	 */
-	public void printPizzaOrderCart(int orderID) {
+	public void printPizzaOrderCart() {
 		for(AbstractPizza p : pizzaOrderList) {
 			System.out.println(p);
 		}
+	}
+	
+	/**
+	 * This method prints the pizza associated to the orderID.
+	 * 
+	 * Author: Ando
+	 * NOTE: 
+	 * 		I talked with Proffesor Ekincan and he said that this method was meant to use the orderID parameter
+	 *  	and that it didn't match the method description. So I left Ryans implementation that didn't need the parameter but did what the description said
+	 *  	and then vice versa for mine.
+	 * @param orderID
+	 */
+	public void printPizzaOrderCart(int orderID) {
+		System.out.println(getPizzaByOrderID(orderID));
 	}
 	
 	/**
