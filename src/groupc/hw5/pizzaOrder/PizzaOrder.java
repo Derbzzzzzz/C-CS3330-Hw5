@@ -286,33 +286,33 @@ public class PizzaOrder {
 		 		if (cookingStrategyType == CookingStyleType.BRICK_OVEN) {
 		 			
 		 			//instantiate a brickOvenCookingStrategy
-		 			BrickOvenCookingStrategy strategyTemp =(new BrickOvenCookingStrategy());
+		 			cookingStrategy =(new BrickOvenCookingStrategy());
 		 			//tests to see if the cooking strategy was already set to the same strategy that it is being changed to
-		 			if(pizza.getCookingStrategy() !=null && pizza.getCookingStrategy().getClass() == strategyTemp.getClass()) {
+		 			if(pizza.getCookingStrategy() !=null && pizza.getCookingStrategy().getClass() == cookingStrategy.getClass()) {
 		 				return false;
 		 			}
 		 			//cook the pizza according to the brickOvenCookingStrategy - return boolean
-		 			return strategyTemp.cook(pizza);
+		 			return cookingStrategy.cook(pizza);
 		 		}
 		 		if(cookingStrategyType== CookingStyleType.CONVENTIONAL_OVEN) {
 		 			//instantiate a ConventionalOvenCookingStrategy
-		 			ConventionalOvenCookingStrategy strategyTemp =(new ConventionalOvenCookingStrategy());
+		 			cookingStrategy =(new ConventionalOvenCookingStrategy());
 		 			//tests to see if the cooking strategy was already set to the same strategy that it is being changed to
-		 			if(pizza.getCookingStrategy() !=null && pizza.getCookingStrategy().getClass() == strategyTemp.getClass()) {
+		 			if(pizza.getCookingStrategy() !=null && pizza.getCookingStrategy().getClass() == cookingStrategy.getClass()) {
 		 				return false;
 		 			}
 		 			//cook the pizza according to the conventional_oven cooking strategy - return a boolean
-		 			return strategyTemp.cook(pizza);
+		 			return cookingStrategy.cook(pizza);
 		 		}
 		 		if(cookingStrategyType == CookingStyleType.MICROWAVE) {
 		 			//instantiate a Microwave cooking strategy 
-		 			MicrowaveCookingStrategy strategyTemp = new MicrowaveCookingStrategy();
+		 			cookingStrategy = new MicrowaveCookingStrategy();
 		 			//tests to see if the cooking strategy was already set to the same strategy that it is being changed to
-		 			if(pizza.getCookingStrategy() !=null && pizza.getCookingStrategy().getClass() == strategyTemp.getClass()) {
+		 			if(pizza.getCookingStrategy() !=null && pizza.getCookingStrategy().getClass() == cookingStrategy.getClass()) {
 		 				return false;
 		 			}
 		 			//cook the pizza according to the conventional oven cooking strategy - return boolean
-		 			return strategyTemp.cook(pizza);
+		 			return cookingStrategy.cook(pizza);
 		 			
 		 		}
 		 	}
